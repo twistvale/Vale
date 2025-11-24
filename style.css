@@ -1,202 +1,162 @@
+
+:root {
+    --primary-color: #5d676d; 
+    --accent-color: #927572;  
+    --background-color: #f7f3e8; 
+    --shape-color: rgba(201, 210, 212, 0.7); 
+    --card-bg-light: rgba(0, 0, 0, 0.05); 
+    --list-item-bg: rgba(0, 0, 0, 0.02); 
+/* ... (Existing styles for body, container, hero, etc. remain here) ... */
+
+/* ""hero ttl */
+/* sd.sd style */
+
+/* img --- */
+/* sd. */
+
+
+/* --- identical skl. --- */
+.skills-grid {
+    display: grid;
+    /* the frc. */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-category {
+    padding: 20px;
+    border: 1px solid var(--shape-color); /* subtle border matching the aesthetic */
+    border-radius: 8px;
+    background-color: var(--card-bg-light); /* light background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+.skill-category:hover {
+    transform: translateY(-3px); /* sbtl lift on hover */
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--shape-color);
+    padding-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    background: var(--list-item-bg);
+    padding: 8px 10px;
+    margin: 6px 0;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+
+/* --- PROJECTS SECTION --- */
+/* s.c */
+
+/* ft.r */
+/* st.ft */
+
+/* responsive */
+@media (min-width: 768px) { 
+    /* sd.sd style */
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        /* On mobile, stack them vertically */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    /* ... (other responsive styles remain here) ... */
+}
 /* Basic Reset and Global Styles */
 :root {
-    --primary-color: #5d676d; /* Dark muted text color */
-    --accent-color: #927572;  /* Muted secondary color */
-    --background-color: #f7f3e8; /* Creamy/Pale background */
-    --shape-color: rgba(201, 210, 212, 0.7); /* Pale taupe/gray shape color with opacity */
+    --primary-color: #5d676d; /* dark muted text color */
+    --accent-color: #927572;  /* muted secondary color */
+    --background-color: #f7f3e8; /* cream n pale background */
+    --shape-color: rgba(201, 210, 212, 0.7); /* pale taupe/gray shape color with opacity */
+    --card-bg-light: rgba(0, 0, 0, 0.05); /* light background for cards/skills */
+    --list-item-bg: rgba(0, 0, 0, 0.02); /* very light bg for list items */
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--primary-color);
-    line-height: 1.6;
-    background-color: var(--background-color); 
-    padding-top: 50px;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--accent-color);
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Base Section Styling */
-.section {
-    padding: 80px 0;
-}
+/* style dump */
 
 /* --- HERO SECTION --- */
-#hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh; 
-    position: relative;
-    overflow: hidden;
-}
+/* ... (Styles for hero, dynamic-bg-shape, text-content remain here) ... */
 
-.hero-content {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-/* 🎨 DYNAMIC MOVING BACKGROUND SHAPE 🎨 */
-.dynamic-bg-shape {
-    position: absolute;
-    width: 800px;
-    height: 500px;
-    top: 50%;
-    left: 50%;
-    /* Initial transformation: Centered and slightly rotated */
-    transform: translate(-50%, -50%) scale(1.1) rotate(45deg); 
-    z-index: 1;
-
-    /* Complex, layered box-shadow to mimic the fractal shape */
-    box-shadow: 
-        0 0 100px 100px var(--shape-color),
-        -200px -100px 100px 50px var(--shape-color),
-        200px 100px 80px 40px var(--shape-color),
-        -400px 0 50px 30px var(--shape-color),
-        400px 0 50px 30px var(--shape-color);
-    
-    filter: blur(50px) opacity(0.8);
-    border-radius: 50%; 
-    
-    /* Apply the movement animation */
-    animation: moveAndChange 15s infinite alternate ease-in-out;
-}
-
-/* Keyframes for the background movement and shape change */
-@keyframes moveAndChange {
-    0% { 
-        transform: translate(-50%, -50%) scale(1.1) rotate(45deg); 
-        opacity: 0.9;
-    }
-    50% { 
-        /* Subtle move and rotate for a flowing effect */
-        transform: translate(-55%, -52%) scale(1.15) rotate(43deg); 
-        opacity: 0.85;
-    }
-    100% { 
-        transform: translate(-48%, -48%) scale(1.05) rotate(47deg); 
-        opacity: 0.95;
-    }
-}
+/* abt me */
+/* st. for sec.*/
 
 
-.text-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 20px;
-}
-
-.greeting {
-    font-size: 1.2em;
-    font-weight: 300;
-    margin-bottom: -10px;
-}
-
-.name {
-    font-size: 4em;
-    font-weight: 800;
-    color: var(--primary-color);
-    line-height: 1.1;
-    margin-bottom: 5px;
-}
-
-.title {
-    font-size: 1.2em;
-    font-weight: 400;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.social-icons a {
-    font-size: 1.5em;
-    margin: 0 8px;
-    color: var(--primary-color);
-}
-
-/* --- ABOUT ME & PROJECTS SECTIONS --- */
-.section h2 {
-    font-size: 1.8em;
-    color: var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-.section .container {
-    text-align: center; /* Center the heading */
-}
-
-.content-block {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.05em;
-    text-align: left;
-}
-
-.single-project-grid {
-    max-width: 600px;
-    margin: 0 auto;
+/* --- skill but r.2 --- */
+.skills-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    /* force colum. */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.project-card {
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle overlay on light background */
-    border-left: 5px solid var(--accent-color);
+.skill-category {
     padding: 20px;
+    border: 1px solid var(--shape-color); /* bord. mat. */
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg-light); /* light background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+.skill-category:hover {
+    transform: translateY(-3px); /* subtle lift on hover */
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--shape-color);
+    padding-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    background: var(--list-item-bg);
+    padding: 8px 10px;
+    margin: 6px 0;
+    border-radius: 4px;
+    font-size: 0.9em;
     text-align: left;
 }
-.project-card h3 {
-    color: var(--accent-color);
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-.project-card .details {
-    font-size: 0.9em;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
 
 
-/* --- FOOTER --- */
-footer {
-    background-color: rgba(0, 0, 0, 0.05);
-    text-align: center;
-    padding: 15px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 0.8em;
-    margin-top: 50px;
+/* projects. */
+/* ... (styles for singleproject-grid and projectcard remain here) ... */
+
+/* footer */
+/* ... (styles for footer remain here) ... */
+
+/* responsive g. */
+@media (min-width: 768px) { 
+    /* side side styles */
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    /* ... (responsive styles remain similar) ... */
+@media (max-width: 768px) {
+    .skills-grid {
+        /* mobile vertical stack */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    /* here for the later styles. */
 }
+/* if the website bugs out, replace the style css */
