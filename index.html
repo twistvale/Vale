@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vale | Discord Bio</title>
+    <title>Vale | Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -31,7 +32,7 @@
     </section>
 
     <section id="about" class="section">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
             <h2>About Me</h2>
             <div class="content-block">
                 <p>I'm a game developer, computer science student and artist. I like to develop random small projects in my free time.</p>
@@ -39,10 +40,26 @@
         </div>
     </section>
 
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 data-aos="fade-right">My Main Project</h2>
+            <div class="project-grid single-project-grid">
+                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
+                    <h3>Surreal</h3>
+                    <p class="details">My little game</p>
+                    <p>Surreal is my own little game made in **Godot** using **C++** and **GDScript**. It's built directly from scratch and not based on anything else.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>That's all. &copy; 2025 Vale ✨</p>
+            <p>That's all. &copy; 2025 Vale </p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
