@@ -1,10 +1,9 @@
 /* Basic Reset and Global Styles */
 :root {
-    --primary-color: #ff6e40; /* Vibrant Orange/Coral Accent */
-    --secondary-color: #3f51b5; /* Blue/Purple Contrast */
-    --text-color: #f5f5f5; /* Light text */
-    --card-bg-color: rgba(0, 0, 0, 0.4); /* Darker background for content */
-    --skill-item-bg: rgba(255, 255, 255, 0.1);
+    --primary-color: #5d676d; /* Dark muted text color */
+    --accent-color: #927572;  /* Muted secondary color */
+    --background-color: #f7f3e8; /* Creamy/Pale background */
+    --fractal-color: #c9d2d4; /* Pale taupe/gray fractal color */
 }
 
 * {
@@ -14,20 +13,22 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Use Poppins for a clean, modern look */
-    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
     line-height: 1.6;
-    
-    /* 🎨 IDENTICAL BACKGROUND STYLES (from previous step) 🎨 */
-    background: linear-gradient(
-        135deg, 
-        #0A001F 0%,     /* Deep Black/Purple Start */
-        #120C46 30%,    /* Darker Blue/Purple */
-        #2A1D77 60%,    /* Vibrant Indigo Stop */
-        #4D1C68 85%,    /* Muted Purple */
-        #000000 100%    /* Dark End */
-    );
-    background-attachment: fixed;
+    /* Muted, creamy background color */
+    background-color: var(--background-color); 
+    padding-top: 50px; /* Gives some space at the top */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
 }
 
 .container {
@@ -36,164 +37,122 @@ body {
     padding: 0 20px;
 }
 
-/* Base Section Styling (Clear Separation) */
-.section {
-    padding: 80px 0;
-}
-
-.dark-section {
-    background-color: var(--card-bg-color); /* Section background is slightly darker */
-}
-
-/* Typography & Headings */
-h2 {
-    font-size: 2.2em;
-    margin-bottom: 40px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--secondary-color);
-    display: inline-block;
-    color: var(--primary-color);
-}
-.container h2 {
-    margin-left: 20px;
-}
-h3 { font-size: 1.5em; }
-
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (IDENTICAL Layout and Style) --- */
 #hero {
-    min-height: 50vh;
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: left; /* Aligns text left like the original */
+    min-height: 80vh; 
+    position: relative;
+    overflow: hidden;
 }
 
-#hero .container {
-    padding: 0;
+.hero-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.fractal-bg {
+    position: absolute;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+    /* Replicate the MANDELBROT SHAPE using a large background image */
+    /* This requires a custom image of the specific fractal, which I will simulate */
+    /* NOTE: I cannot embed the exact fractal image, but this placeholder is key: */
+    background-image: url('YOUR_MANDELBROT_FRACTAL_IMAGE.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    filter: blur(5px) drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+    /* You must replace 'YOUR_MANDELBROT_FRACTAL_IMAGE.png' with the image file of the fractal you want */
+}
+
+.text-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
 }
 
 .greeting {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 300;
     margin-bottom: -10px;
 }
 
 .name {
-    font-size: 4.5em; /* Larger to match the original */
+    font-size: 4em;
     font-weight: 800;
-    color: var(--text-color); /* White name */
+    color: var(--primary-color);
     line-height: 1.1;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.title {
-    font-size: 1.6em;
-    font-weight: 400;
-    margin-bottom: 30px;
-    color: var(--primary-color); /* Accent color for the title */
-}
-
-.btn {
-    display: inline-block;
-    background: var(--primary-color);
-    color: #1a1a1a;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background 0.3s;
-}
-.btn:hover { background: #ff8a65; }
-
-/* --- ABOUT ME SECTION --- */
-#about .content-block {
-    max-width: 800px;
-    font-size: 1.1em;
-}
-
-/* --- SKILLS SECTION (Identical Layout) --- */
-.skills-grid {
-    display: grid;
-    /* Forces three columns for desktop, just like the original */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
-    text-align: center;
-}
-
-.skill-category {
-    padding: 20px;
-    border: 1px solid var(--secondary-color); /* Subtle border */
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-}
-
-.skill-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.skill-category ul {
-    list-style: none;
-    padding-top: 5px;
-}
-
-.skill-category li {
-    background: var(--skill-item-bg); /* Lighter bg for list items */
-    padding: 5px 10px;
-    margin: 8px 0;
-    border-radius: 3px;
-    font-size: 0.9em;
-    text-align: left; /* Align text left within the centered block */
-}
-
-/* --- PROJECTS SECTION (Card Layout) --- */
-.single-project-grid {
-    max-width: 600px;
-    margin: 0 auto;
-    grid-template-columns: 1fr;
-}
-
-.project-card {
-    background-color: var(--card-bg-color);
-    border-left: 5px solid var(--primary-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-.project-card:hover { transform: translateY(-3px); }
-
-.project-card h3 {
-    color: var(--primary-color);
     margin-bottom: 5px;
 }
 
-.project-card .details {
-    font-size: 0.9em;
-    color: #ccc;
-    margin-bottom: 10px;
+.title {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    margin: 0 8px;
+    color: var(--primary-color);
+}
+
+
+/* --- ABOUT ME SECTION --- */
+.section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+
+.content-block {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05em;
 }
 
 /* --- FOOTER --- */
 footer {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.05);
     text-align: center;
     padding: 15px 0;
-    border-top: 3px solid var(--primary-color);
-    font-size: 0.9em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.8em;
+    margin-top: 50px;
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 600px) {
     .name {
         font-size: 3em;
     }
     .title {
-        font-size: 1.3em;
+        font-size: 1em;
     }
-    .skills-grid {
-        /* On mobile, stack them vertically */
-        grid-template-columns: 1fr; 
-    }
-    .section {
-        padding: 40px 0;
+    .hero-content {
+        padding: 0 10px;
     }
 }
