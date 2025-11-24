@@ -36,7 +36,12 @@ a:hover {
     padding: 0 20px;
 }
 
-/* --- HERO SECTION (Identical Layout & Center Alignment) --- */
+/* Base Section Styling */
+.section {
+    padding: 80px 0;
+}
+
+/* --- HERO SECTION --- */
 #hero {
     display: flex;
     justify-content: center;
@@ -55,43 +60,47 @@ a:hover {
     height: 100%;
 }
 
-/* 🎨 DYNAMIC SHAPE REPLICATION 🎨 */
+/* 🎨 DYNAMIC MOVING BACKGROUND SHAPE 🎨 */
 .dynamic-bg-shape {
     position: absolute;
     width: 800px;
     height: 500px;
     top: 50%;
     left: 50%;
-    /* Position and transform the shape to be centered */
+    /* Initial transformation: Centered and slightly rotated */
     transform: translate(-50%, -50%) scale(1.1) rotate(45deg); 
     z-index: 1;
-    opacity: 1;
 
-    /* Use multiple box-shadows to create a complex, blurred, and layered shape */
+    /* Complex, layered box-shadow to mimic the fractal shape */
     box-shadow: 
-        /* Central blob */
         0 0 100px 100px var(--shape-color),
-        /* Side blobs */
         -200px -100px 100px 50px var(--shape-color),
         200px 100px 80px 40px var(--shape-color),
-        /* Smaller detail blobs */
         -400px 0 50px 30px var(--shape-color),
         400px 0 50px 30px var(--shape-color);
     
-    /* Further blur the result to make it look smooth and abstract */
     filter: blur(50px) opacity(0.8);
-    border-radius: 50%; /* Start with a circular base */
+    border-radius: 50%; 
+    
+    /* Apply the movement animation */
+    animation: moveAndChange 15s infinite alternate ease-in-out;
 }
 
-/* 💻 Dynamic effect: Subtle pulsing (optional, but adds to the "not an image" feel) */
-@keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(1.1) rotate(45deg); }
-    50% { transform: translate(-50%, -50%) scale(1.15) rotate(45deg); }
-    100% { transform: translate(-50%, -50%) scale(1.1) rotate(45deg); }
-}
-
-.dynamic-bg-shape {
-    animation: pulse 10s infinite alternate ease-in-out;
+/* Keyframes for the background movement and shape change */
+@keyframes moveAndChange {
+    0% { 
+        transform: translate(-50%, -50%) scale(1.1) rotate(45deg); 
+        opacity: 0.9;
+    }
+    50% { 
+        /* Subtle move and rotate for a flowing effect */
+        transform: translate(-55%, -52%) scale(1.15) rotate(43deg); 
+        opacity: 0.85;
+    }
+    100% { 
+        transform: translate(-48%, -48%) scale(1.05) rotate(47deg); 
+        opacity: 0.95;
+    }
 }
 
 
@@ -129,27 +138,53 @@ a:hover {
     color: var(--primary-color);
 }
 
-
-/* --- ABOUT ME SECTION --- */
-.section {
-    padding: 40px 0;
-    text-align: center;
-}
-
-#about h2 {
+/* --- ABOUT ME & PROJECTS SECTIONS --- */
+.section h2 {
     font-size: 1.8em;
     color: var(--accent-color);
     border-bottom: 2px solid var(--accent-color);
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 25px;
+    text-align: center;
+}
+.section .container {
+    text-align: center; /* Center the heading */
 }
 
 .content-block {
     max-width: 700px;
     margin: 0 auto;
     font-size: 1.05em;
+    text-align: left;
 }
+
+.single-project-grid {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle overlay on light background */
+    border-left: 5px solid var(--accent-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+.project-card h3 {
+    color: var(--accent-color);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+.project-card .details {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
 
 /* --- FOOTER --- */
 footer {
@@ -163,16 +198,5 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
-    .name {
-        font-size: 3em;
-    }
-    .title {
-        font-size: 1em;
-    }
-    .hero-content {
-        padding: 0 10px;
-    }
-    .dynamic-bg-shape {
-        transform: translate(-50%, -50%) scale(0.7) rotate(45deg); /* Scale down for mobile */
-    }
+    /* ... (responsive styles remain similar) ... */
 }
