@@ -1,24 +1,25 @@
-
+/* Basic Reset and Global Styles */
 :root {
-    --primary-color: #5d676d; 
-    --accent-color: #927572;  
-    --background-color: #f7f3e8; 
-    --shape-color: rgba(201, 210, 212, 0.7); 
-    --card-bg-light: rgba(0, 0, 0, 0.05); 
-    --list-item-bg: rgba(0, 0, 0, 0.02); 
+    --primary-color: #5d676d; /* Dark muted text color */
+    --accent-color: #927572;  /* Muted secondary color */
+    --background-color: #f7f3e8; /* Creamy/Pale background */
+    --shape-color: rgba(201, 210, 212, 0.7); /* Pale taupe/gray shape color with opacity */
+    --card-bg-light: rgba(0, 0, 0, 0.05); /* Light background for cards/skills */
+    --list-item-bg: rgba(0, 0, 0, 0.02); /* Very light bg for list items */
+}
 /* ... (Existing styles for body, container, hero, etc. remain here) ... */
 
-/* ""hero ttl */
-/* sd.sd style */
+/* --- HERO SECTION --- */
+/* ... (Styles for hero, dynamic-bg-shape, text-content remain here) ... */
 
-/* img --- */
-/* sd. */
+/* --- ABOUT ME SECTION WITH IMAGE --- */
+/* ... (Styles for section h2, about-content-with-image, mountain-photo remain here) ... */
 
 
-/* --- identical skl. --- */
+/* --- 🌟 NEW: SKILLS SECTION (Identical Layout) 🌟 --- */
 .skills-grid {
     display: grid;
-    /* the frc. */
+    /* Forces three columns for desktop, just like the original */
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
     margin-top: 40px;
@@ -26,14 +27,14 @@
 
 .skill-category {
     padding: 20px;
-    border: 1px solid var(--shape-color); /* subtle border matching the aesthetic */
+    border: 1px solid var(--shape-color); /* Subtle border matching the aesthetic */
     border-radius: 8px;
-    background-color: var(--card-bg-light); /* light background */
+    background-color: var(--card-bg-light); /* Light background */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
 }
 .skill-category:hover {
-    transform: translateY(-3px); /* sbtl lift on hover */
+    transform: translateY(-3px); /* Subtle lift on hover */
 }
 
 .skill-category h3 {
@@ -60,14 +61,14 @@
 
 
 /* --- PROJECTS SECTION --- */
-/* s.c */
+/* ... (Styles for single-project-grid and project-card remain here) ... */
 
-/* ft.r */
-/* st.ft */
+/* --- FOOTER --- */
+/* ... (Styles for footer remain here) ... */
 
-/* responsive */
+/* Responsive Design */
 @media (min-width: 768px) { 
-    /* sd.sd style */
+    /* ... (Styles for side-by-side content remain here) ... */
 }
 
 @media (max-width: 768px) {
@@ -78,85 +79,4 @@
     }
     /* ... (other responsive styles remain here) ... */
 }
-/* Basic Reset and Global Styles */
-:root {
-    --primary-color: #5d676d; /* dark muted text color */
-    --accent-color: #927572;  /* muted secondary color */
-    --background-color: #f7f3e8; /* cream n pale background */
-    --shape-color: rgba(201, 210, 212, 0.7); /* pale taupe/gray shape color with opacity */
-    --card-bg-light: rgba(0, 0, 0, 0.05); /* light background for cards/skills */
-    --list-item-bg: rgba(0, 0, 0, 0.02); /* very light bg for list items */
-}
-/* style dump */
-
-/* --- HERO SECTION --- */
-/* ... (Styles for hero, dynamic-bg-shape, text-content remain here) ... */
-
-/* abt me */
-/* st. for sec.*/
-
-
-/* --- skill but r.2 --- */
-.skills-grid {
-    display: grid;
-    /* force colum. */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.skill-category {
-    padding: 20px;
-    border: 1px solid var(--shape-color); /* bord. mat. */
-    border-radius: 8px;
-    background-color: var(--card-bg-light); /* light background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-}
-.skill-category:hover {
-    transform: translateY(-3px); /* subtle lift on hover */
-}
-
-.skill-category h3 {
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--shape-color);
-    padding-bottom: 10px;
-}
-
-.skill-category ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-category li {
-    background: var(--list-item-bg);
-    padding: 8px 10px;
-    margin: 6px 0;
-    border-radius: 4px;
-    font-size: 0.9em;
-    text-align: left;
-}
-
-
-/* projects. */
-/* ... (styles for singleproject-grid and projectcard remain here) ... */
-
-/* footer */
-/* ... (styles for footer remain here) ... */
-
-/* responsive g. */
-@media (min-width: 768px) { 
-    /* side side styles */
-}
-
-@media (max-width: 768px) {
-    .skills-grid {
-        /* mobile vertical stack */
-        grid-template-columns: 1fr; 
-        gap: 20px;
-    }
-    /* here for the later styles. */
-}
-/* if the website bugs out, replace the style css */
+/* Please ensure you replace your entire style.css file with the complete, updated version. */
