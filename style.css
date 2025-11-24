@@ -2,8 +2,9 @@
 :root {
     --primary-color: #ff6e40; /* Vibrant Orange/Coral Accent */
     --secondary-color: #3f51b5; /* Blue/Purple Contrast */
-    --text-color: #ffffff; /* White text for contrast */
-    --light-bg-color: #f0f0f0; /* Light background for contrast sections */
+    --text-color: #f5f5f5; /* Light text */
+    --card-bg-color: rgba(0, 0, 0, 0.4); /* Darker background for content */
+    --skill-item-bg: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -13,12 +14,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Use Poppins for a clean, modern look */
     color: var(--text-color);
     line-height: 1.6;
     
-    /* 🎨 IDENTICAL BACKGROUND STYLES 🎨 */
-    /* This gradient closely matches ericalfaro.dev's rich, dark, multi-color shift */
+    /* 🎨 IDENTICAL BACKGROUND STYLES (from previous step) 🎨 */
     background: linear-gradient(
         135deg, 
         #0A001F 0%,     /* Deep Black/Purple Start */
@@ -30,146 +30,170 @@ body {
     background-attachment: fixed;
 }
 
-/* Container now acts as a content wrapper with slight opacity for contrast */
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    /* Dark overlay (opacity 0.7) to match the original's content box clarity */
-    background-color: rgba(0, 0, 0, 0.7); 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--light-bg-color);
-}
-
-/* Typography */
-h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    color: var(--primary-color);
-    text-align: center;
-}
-h3 { font-size: 1.4em; }
-
+/* Base Section Styling (Clear Separation) */
 .section {
-    padding: 40px 20px;
+    padding: 80px 0;
 }
 
-/* Hero Section (The Main Display) */
+.dark-section {
+    background-color: var(--card-bg-color); /* Section background is slightly darker */
+}
+
+/* Typography & Headings */
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    color: var(--primary-color);
+}
+.container h2 {
+    margin-left: 20px;
+}
+h3 { font-size: 1.5em; }
+
+/* --- HERO SECTION --- */
 #hero {
-    padding: 60px 20px;
-    text-align: center;
-    border-bottom: 3px solid var(--secondary-color);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    text-align: left; /* Aligns text left like the original */
+}
+
+#hero .container {
+    padding: 0;
 }
 
 .greeting {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: 300;
+    margin-bottom: -10px;
 }
 
 .name {
-    font-size: 3em;
+    font-size: 4.5em; /* Larger to match the original */
     font-weight: 800;
-    color: var(--primary-color);
+    color: var(--text-color); /* White name */
     line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .title {
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-weight: 400;
     margin-bottom: 30px;
-    color: #ccc;
+    color: var(--primary-color); /* Accent color for the title */
 }
 
 .btn {
     display: inline-block;
     background: var(--primary-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    border-radius: 20px; 
+    color: #1a1a1a;
+    padding: 12px 25px;
+    border-radius: 5px;
     font-weight: 600;
-    transition: background 0.3s, transform 0.2s;
+    transition: background 0.3s;
+}
+.btn:hover { background: #ff8a65; }
+
+/* --- ABOUT ME SECTION --- */
+#about .content-block {
+    max-width: 800px;
+    font-size: 1.1em;
 }
 
-.btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-/* Skills Section */
-.dark-section {
-    background-color: rgba(0, 0, 0, 0.3); 
-}
-
+/* --- SKILLS SECTION (Identical Layout) --- */
 .skills-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 10px 0;
+    display: grid;
+    /* Forces three columns for desktop, just like the original */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
     text-align: center;
 }
 
 .skill-category {
-    flex: 1;
-    padding: 15px;
-    border: 1px dashed var(--secondary-color);
+    padding: 20px;
+    border: 1px solid var(--secondary-color); /* Subtle border */
     border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
 
 .skill-category h3 {
     color: var(--primary-color);
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
-/* Project Card */
+.skill-category ul {
+    list-style: none;
+    padding-top: 5px;
+}
+
+.skill-category li {
+    background: var(--skill-item-bg); /* Lighter bg for list items */
+    padding: 5px 10px;
+    margin: 8px 0;
+    border-radius: 3px;
+    font-size: 0.9em;
+    text-align: left; /* Align text left within the centered block */
+}
+
+/* --- PROJECTS SECTION (Card Layout) --- */
+.single-project-grid {
+    max-width: 600px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+}
+
 .project-card {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--card-bg-color);
     border-left: 5px solid var(--primary-color);
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
 }
+.project-card:hover { transform: translateY(-3px); }
 
 .project-card h3 {
+    color: var(--primary-color);
     margin-bottom: 5px;
 }
 
 .project-card .details {
     font-size: 0.9em;
-    color: var(--primary-color);
+    color: #ccc;
     margin-bottom: 10px;
 }
 
-/* Footer (Less Serious) */
+/* --- FOOTER --- */
 footer {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding: 15px 0;
     border-top: 3px solid var(--primary-color);
     font-size: 0.9em;
-    border-radius: 0 0 10px 10px;
 }
 
-/* Responsive Design (For smaller screens/Discord) */
-@media (max-width: 600px) {
+/* Responsive Layout */
+@media (max-width: 768px) {
     .name {
-        font-size: 2.5em;
+        font-size: 3em;
     }
     .title {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     .skills-grid {
-        flex-direction: column;
+        /* On mobile, stack them vertically */
+        grid-template-columns: 1fr; 
+    }
+    .section {
+        padding: 40px 0;
     }
 }
